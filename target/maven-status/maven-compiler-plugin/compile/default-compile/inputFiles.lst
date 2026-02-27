@@ -1,0 +1,10 @@
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\controller\CustomerController.java
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\entity\Customer.java
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\exception\GlobalExceptionHandler.java
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\generic\BaseController.java
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\generic\BaseRepository.java
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\generic\BaseService.java
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\generic\BaseServiceImpl.java
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\OzodApplication.java
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\repository\CustomerRepository.java
+C:\MyJavaProjects\ozod\src\main\java\com\ozod\policy\service\CustomerService.java
