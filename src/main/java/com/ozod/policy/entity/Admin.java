@@ -12,8 +12,6 @@ import jakarta.validation.constraints.Pattern;
 @Entity
 @Table(name = "ADMIN")
 public class Admin {
-	
-	//test
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
