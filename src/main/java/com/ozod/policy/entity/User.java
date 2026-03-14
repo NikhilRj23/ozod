@@ -11,7 +11,7 @@ import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "USERS")
-public class User {
+public class User extends BaseEntity{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
@@ -31,6 +31,17 @@ public class User {
 
 	@Column(unique = true, nullable = true)
 	private String panNo;
+	
+	@Column(unique = true)
+	@NotBlank(message = "Email is required")
+    private String email;
+	
+	@Column(unique = true)
+	@NotBlank(message = "Phone is required")
+	private String phone;
+	
+	@NotBlank(message = "Password is required")
+	private String password;
 
 	public String getId() {
 		return id;
@@ -78,6 +89,30 @@ public class User {
 
 	public void setPanNo(String panNo) {
 		this.panNo = panNo;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 }

@@ -29,8 +29,14 @@ public class UserServiceImpl implements UserService {
 		if (dto.getPanNo() != null && userRepository.existsByPanNo(dto.getPanNo())) {
 			throw new IllegalArgumentException("Pan number::" + dto.getPanNo() + " already exists");
 		}
+		if (dto.getEmail() != null && userRepository.existsByEmail(dto.getEmail())) {
+			throw new IllegalArgumentException("Email::" + dto.getEmail() + " already exists");
+		}
 		User user = modelMapper.map(dto, User.class);
 		User save = userRepository.save(user);
+		save.setCreatedBy(save.getId());
+		save.setUpdatedBy(save.getId());
+		userRepository.save(user);
 		return modelMapper.map(save, UserDto.class);
 	}
 
@@ -44,6 +50,13 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<UserDto> findAllUser() {
 		return userRepository.findAll().stream().map(ed -> modelMapper.map(ed, UserDto.class)).toList();
+	}
+
+	@Override
+	public UserDto findByEmailPassword(String email, String password) {
+		User user = userRepository.findByEmailAndPassword(email,password)
+				.orElseThrow(() -> new UserNotFoundException("User not available"));
+		return modelMapper.map(user, UserDto.class);
 	}
 
 }

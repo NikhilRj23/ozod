@@ -2,7 +2,7 @@ package com.ozod.policy.dto;
 
 import java.io.Serializable;
 
-public class AdminDto implements Serializable{
+public class AdminDto extends BaseDto implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 

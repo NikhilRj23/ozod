@@ -12,4 +12,6 @@ public interface UserService{
 
 	List<UserDto> findAllUser();
 
+	UserDto findByEmailPassword(String email, String password);
+
 }
