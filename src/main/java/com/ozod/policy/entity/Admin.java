@@ -11,7 +11,9 @@ import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "ADMIN")
-public class Admin {
+public class Admin extends BaseEntity{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)

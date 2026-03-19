@@ -1,10 +1,13 @@
 package com.ozod.policy.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -13,16 +16,14 @@ import jakarta.validation.constraints.Pattern;
 @Table(name = "USERS")
 public class User extends BaseEntity{
 
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
 	@Column(name = "ID")
 	private String id;
 
 	private String name;
-
-	private String tempAddress;
-
-	private String permanentAddress;
 
 	@Column(unique = true)
 	@NotBlank(message = "Aadhar number is required")
@@ -42,6 +43,10 @@ public class User extends BaseEntity{
 	
 	@NotBlank(message = "Password is required")
 	private String password;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id")
+	private Address address;
 
 	public String getId() {
 		return id;
@@ -57,22 +62,6 @@ public class User extends BaseEntity{
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getTempAddress() {
-		return tempAddress;
-	}
-
-	public void setTempAddress(String tempAddress) {
-		this.tempAddress = tempAddress;
-	}
-
-	public String getPermanentAddress() {
-		return permanentAddress;
-	}
-
-	public void setPermanentAddress(String permanentAddress) {
-		this.permanentAddress = permanentAddress;
 	}
 
 	public String getAdharNo() {
@@ -113,6 +102,14 @@ public class User extends BaseEntity{
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 }

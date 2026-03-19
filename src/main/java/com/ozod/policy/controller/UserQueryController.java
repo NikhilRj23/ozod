@@ -36,9 +36,9 @@ public class UserQueryController {
 		return new ResponseEntity<>(userQueryDto, HttpStatus.OK);
 	}
 
-	@GetMapping("/find/all")
-	public ResponseEntity<List<UserQueryDto>> findAllUserQuery() {
-		List<UserQueryDto> userQueryDto = service.findAllUserQuery();
+	@GetMapping("/find/all/{page}/{size}")
+	public ResponseEntity<List<UserQueryDto>> findAllUserQuery(@PathVariable Integer page, @PathVariable Integer size) {
+		List<UserQueryDto> userQueryDto = service.findAllUserQuery(page,size);
 		return new ResponseEntity<>(userQueryDto, HttpStatus.OK);
 	}
 

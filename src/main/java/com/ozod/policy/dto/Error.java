@@ -1,9 +1,11 @@
 package com.ozod.policy.dto;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Error {
+public class Error implements Serializable{
 
+	private static final long serialVersionUID = 1L;
 	private LocalDateTime timestamp;
 	private int status;
 	private String message;

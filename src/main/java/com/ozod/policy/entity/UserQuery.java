@@ -1,7 +1,5 @@
 package com.ozod.policy.entity;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +10,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "USER_QUERY")
-public class UserQuery extends BaseEntity implements Serializable{
+public class UserQuery extends BaseEntity{
 	
 	private static final long serialVersionUID = 1L;
 

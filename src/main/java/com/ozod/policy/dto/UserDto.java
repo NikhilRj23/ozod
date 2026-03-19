@@ -1,8 +1,6 @@
 package com.ozod.policy.dto;
 
-import java.io.Serializable;
-
-public class UserDto extends BaseDto implements Serializable{
+public class UserDto extends BaseDto{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -10,10 +8,6 @@ public class UserDto extends BaseDto implements Serializable{
 
 	private String name;
 
-	private String tempAddress;
-	
-	private String permanentAddress;
-	
 	private String phone;
 	
 	private String adharNo;
@@ -23,6 +17,8 @@ public class UserDto extends BaseDto implements Serializable{
 	private String email;
 	
 	private String password;
+	
+	private AddressDto address;
 
 	public String getId() {
 		return id;
@@ -38,22 +34,6 @@ public class UserDto extends BaseDto implements Serializable{
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getTempAddress() {
-		return tempAddress;
-	}
-
-	public void setTempAddress(String tempAddress) {
-		this.tempAddress = tempAddress;
-	}
-
-	public String getPermanentAddress() {
-		return permanentAddress;
-	}
-
-	public void setPermanentAddress(String permanentAddress) {
-		this.permanentAddress = permanentAddress;
 	}
 
 	public String getAdharNo() {
@@ -95,6 +75,13 @@ public class UserDto extends BaseDto implements Serializable{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
 
+	public AddressDto getAddress() {
+		return address;
+	}
+
+	public void setAddress(AddressDto address) {
+		this.address = address;
+	}
+	
 }

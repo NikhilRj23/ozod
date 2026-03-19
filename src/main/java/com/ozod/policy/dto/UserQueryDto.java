@@ -1,8 +1,6 @@
 package com.ozod.policy.dto;
 
-import java.io.Serializable;
-
-public class UserQueryDto extends BaseDto implements Serializable{
+public class UserQueryDto extends BaseDto{
 	
 	private static final long serialVersionUID = 1L;
 

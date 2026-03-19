@@ -1,5 +1,6 @@
 package com.ozod.policy.entity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -9,8 +10,10 @@ import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class BaseEntity{
+public class BaseEntity implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+
 	private String createdBy;
 
 	private String updatedBy;

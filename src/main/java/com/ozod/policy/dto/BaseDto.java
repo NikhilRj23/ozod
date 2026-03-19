@@ -3,6 +3,9 @@ package com.ozod.policy.dto;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import jakarta.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class BaseDto implements Serializable{
 	
 	private static final long serialVersionUID = 1L;

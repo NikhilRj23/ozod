@@ -10,6 +10,6 @@ public interface UserQueryService{
 
 	UserQueryDto findUserQuery(String id);
 
-	List<UserQueryDto> findAllUserQuery();
+	List<UserQueryDto> findAllUserQuery(Integer page, Integer size);
 
 }

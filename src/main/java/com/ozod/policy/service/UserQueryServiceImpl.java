@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.ozod.policy.constants.ResolveStatus;
@@ -50,8 +52,11 @@ public class UserQueryServiceImpl implements UserQueryService {
 	}
 
 	@Override
-	public List<UserQueryDto> findAllUserQuery() {
-		return userQueryRepository.findAll().stream().map(ed -> modelMapper.map(ed, UserQueryDto.class)).toList();
+	public List<UserQueryDto> findAllUserQuery(Integer page, Integer size) {
+		return userQueryRepository.findAll(PageRequest.of(page, size ,Sort.by("createdDate").descending()))
+				.stream()
+				.map(ed -> modelMapper.map(ed, UserQueryDto.class))
+				.toList();
 	}
 
 }
